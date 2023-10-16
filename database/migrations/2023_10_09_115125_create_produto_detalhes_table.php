@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('produto_detalhes', function (Blueprint $table) {
             $table->id();
-            $table->string('comprimento', 20);
+            $table->float('comprimento', 20);
             $table->string('largura', 20);
             $table->string('altura', 20);
             $table->timestamps();

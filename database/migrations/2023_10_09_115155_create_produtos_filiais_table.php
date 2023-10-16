@@ -14,10 +14,20 @@ return new class extends Migration
         Schema::create('produtos_filiais', function (Blueprint $table) {
             $table->id();
             $table->string('produtoId', 20);
-            $table->string('precoVenda', 1000);
-            $table->string('estoquemin', 20);
-            $table->string('estoquemax', 100);
+            $table->integer('precoVenda', 1000);
+            $table->integer('estoquemin', 20);
+            $table->integer('estoquemax', 100);
             $table->timestamps();
+        });
+
+        Schema::table('produtos', function (Blueprint $table) {
+            $table->unsignedBigInteger('produto_id');
+            $table->foreign('produto_id')->references('id')->on('produtos');
+        });
+
+        Schema::table('filiais', function (Blueprint $table) {
+            $table->unsignedBigInteger('filial_id');
+            $table->foreign('filial_id')->references('id')->on('filiais');
         });
     }
 

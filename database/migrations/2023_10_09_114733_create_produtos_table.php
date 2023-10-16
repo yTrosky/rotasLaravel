@@ -16,10 +16,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nome', 120);
             $table->string('descricao', 120);
-            $table->string('peso', 120);
-            $table->string('precovenda', 1000);
-            $table->string('estoquemin', 100);
-            $table->string('estoquemax', 100);
+            $table->float('peso', 120);
+            $table->float('precovenda', 1000);
+            $table->integer('estoquemin', 100);
+            $table->integer('estoquemax', 100);
             
         });
     }
